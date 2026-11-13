@@ -15,14 +15,14 @@ n_orders = 5000
 orders_df = pd.DataFrame({
     "order_id": range(1, n_orders + 1),
     "warehouse": np.random.choice(["LA_Hub", "Memphis_MEM1", "Dallas_DC", "Newark_FC"], n_orders),
-    "carrier_id": np.random.choice([1, 2, 3], n_orders, p=[0.45, 0.35, 0.20]),
+    "carrier_id": np.random.choice(list(range(1, 4)), n_orders, p=[0.45, 0.35, 0.20]),
     "shipping_mode": np.random.choice(["Same Day", "First Class", "Standard"], n_orders, p=[0.15, 0.35, 0.50]),
-    "scheduled_days": np.random.choice([1, 3, 5], n_orders, p=[0.15, 0.35, 0.50]),
-    "actual_days": np.random.choice([1, 2, 3, 4, 5, 7], n_orders, p=[0.12, 0.28, 0.20, 0.22, 0.12, 0.06])
+    "scheduled_days": np.random.choice(list(range(1, 4)), n_orders, p=[0.15, 0.35, 0.50]),
+    "actual_days": np.random.choice(list(range(1, 7)), n_orders, p=[0.12, 0.28, 0.20, 0.22, 0.12, 0.06])
 })
 
 carriers_df = pd.DataFrame({
-    "carrier_id":,
+    "carrier_id": list(range(1, 4)),
     "carrier_name": ["Apex Freight", "Pacific Express", "Continental Air"],
     "cost_per_shipment": [12.50, 18.00, 24.75]
 })
